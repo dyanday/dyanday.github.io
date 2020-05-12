@@ -344,101 +344,101 @@
         <p>nmap端口扫描神器 </p>
 <a id="more"></a>
 
-<h2 id="1-主机发现"><a href="#1-主机发现" class="headerlink" title="1.主机发现"></a>1.主机发现</h2><p><img src="https://cdn.dyblogs.cn//20200512104103.png" alt=""></p>
-<h4 id="1-1-ping扫描"><a href="#1-1-ping扫描" class="headerlink" title="1.1 ping扫描"></a>1.1 ping扫描</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmap -sP  192.168.1.1</span><br></pre></td></tr></table></figure>
+<h2 id="主机发现"><a href="#主机发现" class="headerlink" title="主机发现"></a>主机发现</h2><p><img src="https://cdn.dyblogs.cn//20200512104103.png" alt=""></p>
+<h4 id="ping扫描"><a href="#ping扫描" class="headerlink" title="ping扫描"></a>ping扫描</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmap -sP  192.168.1.1</span><br></pre></td></tr></table></figure>
 
 <p><img src="https://cdn.dyblogs.cn//20200512144056.png" alt=""></p>
 <p>nmap发送icmp回声请求和一个TCP报文到目标端口</p>
-<h4 id="1-2-无ping"><a href="#1-2-无ping" class="headerlink" title="1.2 无ping"></a>1.2 无ping</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmap -P0  106.53.91.134</span><br></pre></td></tr></table></figure>
+<h4 id="无ping"><a href="#无ping" class="headerlink" title="无ping"></a>无ping</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmap -P0  106.53.91.134</span><br></pre></td></tr></table></figure>
 
 <p><img src="https://cdn.dyblogs.cn//20200512105117.png" alt=""></p>
 <p>nmap采用tcp方式发送一个SYN报文到服务器，服务器响应一个YSN+ACK</p>
 <p><img src="https://cdn.dyblogs.cn//20200512105511.png" alt=""></p>
-<h4 id="1-3-TCP-SYS-Ping扫描"><a href="#1-3-TCP-SYS-Ping扫描" class="headerlink" title="1.3 TCP SYS Ping扫描"></a>1.3 TCP SYS Ping扫描</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmap -PS -v  106.53.91.134</span><br></pre></td></tr></table></figure>
+<h4 id="TCP-SYS-Ping扫描"><a href="#TCP-SYS-Ping扫描" class="headerlink" title="TCP SYS Ping扫描"></a>TCP SYS Ping扫描</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmap -PS -v  106.53.91.134</span><br></pre></td></tr></table></figure>
 
 <p><img src="https://cdn.dyblogs.cn//20200512110005.png" alt=""></p>
 <p><img src="https://cdn.dyblogs.cn//20200512105945.png" alt=""></p>
 <p>namp是通过SYN/ACK和RST响应来对目标主机是否存活进行判断，但在特定情况防火墙会丢弃RST包，这种情况下扫描的结果不准确。</p>
-<h4 id="1-4-TCP-ACK-Ping"><a href="#1-4-TCP-ACK-Ping" class="headerlink" title="1.4 TCP ACK Ping"></a>1.4 TCP ACK Ping</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmap -PA 106.53.91.134</span><br></pre></td></tr></table></figure>
+<h4 id="TCP-ACK-Ping"><a href="#TCP-ACK-Ping" class="headerlink" title="TCP ACK Ping"></a>TCP ACK Ping</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmap -PA 106.53.91.134</span><br></pre></td></tr></table></figure>
 
 <p><img src="https://cdn.dyblogs.cn//20200512203925.png" alt=""></p>
 <p><img src="https://cdn.dyblogs.cn//20200512110639.png" alt=""></p>
-<h4 id="1-5-TCP-ACK-SYN-Ping"><a href="#1-5-TCP-ACK-SYN-Ping" class="headerlink" title="1.5 TCP ACK  SYN Ping"></a>1.5 TCP ACK  SYN Ping</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmap -PA -PS 106.53.91.134</span><br></pre></td></tr></table></figure>
+<h4 id="TCP-ACK-SYN-Ping"><a href="#TCP-ACK-SYN-Ping" class="headerlink" title="TCP ACK  SYN Ping"></a>TCP ACK  SYN Ping</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmap -PA -PS 106.53.91.134</span><br></pre></td></tr></table></figure>
 
 <p><img src="https://cdn.dyblogs.cn//20200512110358.png" alt=""></p>
 <p><img src="https://cdn.dyblogs.cn//20200512110857.png" alt=""></p>
-<h4 id="1-6-UDP-Ping扫描"><a href="#1-6-UDP-Ping扫描" class="headerlink" title="1.6 UDP Ping扫描"></a>1.6 UDP Ping扫描</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmap -PU 106.53.91.134</span><br></pre></td></tr></table></figure>
+<h4 id="UDP-Ping扫描"><a href="#UDP-Ping扫描" class="headerlink" title="UDP Ping扫描"></a>UDP Ping扫描</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmap -PU 106.53.91.134</span><br></pre></td></tr></table></figure>
 
 <p><img src="https://cdn.dyblogs.cn//20200512111108.png" alt=""></p>
 <p><img src="https://cdn.dyblogs.cn//20200512111128.png" alt=""></p>
 <p>UDP Ping 扫描nmap会发送一个空的UDP报文到目标主机（默认端口40125），如果目标主机响应则返回一个ICMP端口不可达错误，如果目标主机不是存活状态则会返回各种ICMP错误信息</p>
-<h4 id="1-7-ICMP-Ping-扫描"><a href="#1-7-ICMP-Ping-扫描" class="headerlink" title="1.7 ICMP Ping 扫描"></a>1.7 ICMP Ping 扫描</h4><h6 id="1-7-1-icmp-Echo-扫描"><a href="#1-7-1-icmp-Echo-扫描" class="headerlink" title="1.7.1 icmp Echo 扫描"></a>1.7.1 icmp Echo 扫描</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmap -PE</span><br></pre></td></tr></table></figure>
+<h4 id="ICMP-Ping-扫描"><a href="#ICMP-Ping-扫描" class="headerlink" title="ICMP Ping 扫描"></a>ICMP Ping 扫描</h4><h6 id="icmp-Echo-扫描"><a href="#icmp-Echo-扫描" class="headerlink" title="icmp Echo 扫描"></a>icmp Echo 扫描</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmap -PE</span><br></pre></td></tr></table></figure>
 
-<h6 id="1-7-2-icmp-时间戳-Ping-扫描"><a href="#1-7-2-icmp-时间戳-Ping-扫描" class="headerlink" title="1.7.2  icmp 时间戳 Ping 扫描"></a>1.7.2  icmp 时间戳 Ping 扫描</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmap -PP</span><br></pre></td></tr></table></figure>
+<h6 id="icmp-时间戳-Ping-扫描"><a href="#icmp-时间戳-Ping-扫描" class="headerlink" title="icmp 时间戳 Ping 扫描"></a>icmp 时间戳 Ping 扫描</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmap -PP</span><br></pre></td></tr></table></figure>
 
-<h6 id="1-7-3-icmp-地址掩码-Ping-扫描（内网）"><a href="#1-7-3-icmp-地址掩码-Ping-扫描（内网）" class="headerlink" title="1.7.3 icmp 地址掩码 Ping 扫描（内网）"></a>1.7.3 icmp 地址掩码 Ping 扫描（内网）</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmap -PC</span><br></pre></td></tr></table></figure>
+<h6 id="icmp-地址掩码-Ping-扫描（内网）"><a href="#icmp-地址掩码-Ping-扫描（内网）" class="headerlink" title="icmp 地址掩码 Ping 扫描（内网）"></a>icmp 地址掩码 Ping 扫描（内网）</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmap -PC</span><br></pre></td></tr></table></figure>
 
-<h4 id="1-8-ARP-Ping-扫描"><a href="#1-8-ARP-Ping-扫描" class="headerlink" title="1.8 ARP Ping 扫描"></a>1.8 ARP Ping 扫描</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmap -PR  106.53.91.134</span><br></pre></td></tr></table></figure>
+<h4 id="ARP-Ping-扫描"><a href="#ARP-Ping-扫描" class="headerlink" title="ARP Ping 扫描"></a>ARP Ping 扫描</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmap -PR  106.53.91.134</span><br></pre></td></tr></table></figure>
 
 <p><img src="https://cdn.dyblogs.cn//20200512112309.png" alt=""></p>
-<h4 id="1-9-路由跟踪"><a href="#1-9-路由跟踪" class="headerlink" title="1.9 路由跟踪"></a>1.9 路由跟踪</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmap --traceroute 106.53.91.134</span><br></pre></td></tr></table></figure>
+<h4 id="路由跟踪"><a href="#路由跟踪" class="headerlink" title="路由跟踪"></a>路由跟踪</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmap --traceroute 106.53.91.134</span><br></pre></td></tr></table></figure>
 
 <p><img src="https://cdn.dyblogs.cn//20200512113000.png" alt=""></p>
-<h4 id="1-10-SCTP-INIT-Ping-扫描"><a href="#1-10-SCTP-INIT-Ping-扫描" class="headerlink" title="1.10 SCTP INIT Ping 扫描"></a>1.10 SCTP INIT Ping 扫描</h4><p>SCTP （stream  Control Transmisson Protocol ,流控制传输协议），工作在传输层。SCTP可以看作是TCP协议的改进，它改进了TCP的一些不足，SCTP INTIT Ping 扫描通过向目标发送INIT包 ，根据目标主机的响应判断主机是否存活</p>
+<h4 id="SCTP-INIT-Ping-扫描"><a href="#SCTP-INIT-Ping-扫描" class="headerlink" title="SCTP INIT Ping 扫描"></a>SCTP INIT Ping 扫描</h4><p>SCTP （stream  Control Transmisson Protocol ,流控制传输协议），工作在传输层。SCTP可以看作是TCP协议的改进，它改进了TCP的一些不足，SCTP INTIT Ping 扫描通过向目标发送INIT包 ，根据目标主机的响应判断主机是否存活</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmap -PY 106.53.91.134</span><br></pre></td></tr></table></figure>
 
 <p><img src="https://cdn.dyblogs.cn//20200512113633.png" alt=""></p>
 <p><img src="https://cdn.dyblogs.cn//20200512113600.png" alt=""></p>
-<h2 id="2-网络探索"><a href="#2-网络探索" class="headerlink" title="2.网络探索"></a>2.网络探索</h2><p><img src="https://cdn.dyblogs.cn//20200512113824.png" alt=""></p>
-<h4 id="2-1时序扫描"><a href="#2-1时序扫描" class="headerlink" title="2.1时序扫描"></a>2.1时序扫描</h4><p><img src="https://cdn.dyblogs.cn//20200512114105.png" alt=""></p>
-<h4 id="2-2-指定端口扫描"><a href="#2-2-指定端口扫描" class="headerlink" title="2.2 指定端口扫描"></a>2.2 指定端口扫描</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmap -p 80-1000 106.53.91.134</span><br></pre></td></tr></table></figure>
+<h2 id="网络探索"><a href="#网络探索" class="headerlink" title="网络探索"></a>网络探索</h2><p><img src="https://cdn.dyblogs.cn//20200512113824.png" alt=""></p>
+<h4 id="时序扫描"><a href="#时序扫描" class="headerlink" title="时序扫描"></a>时序扫描</h4><p><img src="https://cdn.dyblogs.cn//20200512114105.png" alt=""></p>
+<h4 id="指定端口扫描"><a href="#指定端口扫描" class="headerlink" title="指定端口扫描"></a>指定端口扫描</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmap -p 80-1000 106.53.91.134</span><br></pre></td></tr></table></figure>
 
 <p><img src="https://cdn.dyblogs.cn//20200512114425.png" alt=""></p>
-<h4 id="2-3-TCP-SYN-扫描"><a href="#2-3-TCP-SYN-扫描" class="headerlink" title="2.3 TCP SYN 扫描"></a>2.3 TCP SYN 扫描</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmap -sS 106.53.91.134</span><br></pre></td></tr></table></figure>
+<h4 id="TCP-SYN-扫描"><a href="#TCP-SYN-扫描" class="headerlink" title="TCP SYN 扫描"></a>TCP SYN 扫描</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmap -sS 106.53.91.134</span><br></pre></td></tr></table></figure>
 
 <p>-sS 扫描方式是比较常用的的一种扫描方式，主要是因为扫描速度快，平均一秒可以扫描上千端口。</p>
 <p>SYN扫描方式相对来说比较隐蔽，很难被防火墙或者管理员发现，因为它不会进行tcp的连接。</p>
-<h4 id="2-4-TCP-连续扫描"><a href="#2-4-TCP-连续扫描" class="headerlink" title="2.4 TCP 连续扫描"></a>2.4 TCP 连续扫描</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmap -sT 106.53.91.134</span><br></pre></td></tr></table></figure>
+<h4 id="TCP-连续扫描"><a href="#TCP-连续扫描" class="headerlink" title="TCP 连续扫描"></a>TCP 连续扫描</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmap -sT 106.53.91.134</span><br></pre></td></tr></table></figure>
 
 <p><img src="https://cdn.dyblogs.cn//20200512115233.png" alt=""></p>
-<h4 id="2-5-UDP-扫描"><a href="#2-5-UDP-扫描" class="headerlink" title="2.5  UDP 扫描"></a>2.5  UDP 扫描</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmap -sU 106.53.91.134</span><br></pre></td></tr></table></figure>
+<h4 id="UDP-扫描"><a href="#UDP-扫描" class="headerlink" title="UDP 扫描"></a>UDP 扫描</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmap -sU 106.53.91.134</span><br></pre></td></tr></table></figure>
 
 <p>UDP端口扫描通过发送UDP数据包到目标主机并等待响应。扫描速度比较慢</p>
-<h4 id="2-6-隐蔽扫描"><a href="#2-6-隐蔽扫描" class="headerlink" title="2.6 隐蔽扫描"></a>2.6 隐蔽扫描</h4><h6 id="2-6-1-sN-Null-扫描"><a href="#2-6-1-sN-Null-扫描" class="headerlink" title="2.6.1  sN Null 扫描"></a>2.6.1  sN Null 扫描</h6><p>通过发送非常规的TCP数据包对目标主机探测</p>
+<h4 id="隐蔽扫描"><a href="#隐蔽扫描" class="headerlink" title="隐蔽扫描"></a>隐蔽扫描</h4><h6 id="sN-Null-扫描"><a href="#sN-Null-扫描" class="headerlink" title="sN Null 扫描"></a>sN Null 扫描</h6><p>通过发送非常规的TCP数据包对目标主机探测</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmap -sN</span><br></pre></td></tr></table></figure>
 
-<h6 id="2-6-2-FIN-扫描"><a href="#2-6-2-FIN-扫描" class="headerlink" title="2.6.2 FIN 扫描"></a>2.6.2 FIN 扫描</h6><p> TCP  FIN 扫描 就是向目标端口发送一个FIN包，如果目标响应RST包，则说明端口开放。</p>
+<h6 id="FIN-扫描"><a href="#FIN-扫描" class="headerlink" title="FIN 扫描"></a>FIN 扫描</h6><p> TCP  FIN 扫描 就是向目标端口发送一个FIN包，如果目标响应RST包，则说明端口开放。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmap -sF</span><br></pre></td></tr></table></figure>
 
-<h6 id="2-6-3-sX扫描"><a href="#2-6-3-sX扫描" class="headerlink" title="2.6.3  sX扫描"></a>2.6.3  sX扫描</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmap -sX</span><br></pre></td></tr></table></figure>
+<h6 id="sX扫描"><a href="#sX扫描" class="headerlink" title="sX扫描"></a>sX扫描</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmap -sX</span><br></pre></td></tr></table></figure>
 
-<h4 id="2-7-TCP-ACK-扫描"><a href="#2-7-TCP-ACK-扫描" class="headerlink" title="2.7 TCP ACK 扫描."></a>2.7 TCP ACK 扫描.</h4><p>通过向目标主机一个端口发送之一个只有ACK 标志的TCP 数据，如果目标主机响应则端口开启。</p>
+<h4 id="TCP-ACK-扫描"><a href="#TCP-ACK-扫描" class="headerlink" title="TCP ACK 扫描."></a>TCP ACK 扫描.</h4><p>通过向目标主机一个端口发送之一个只有ACK 标志的TCP 数据，如果目标主机响应则端口开启。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmap -sA</span><br></pre></td></tr></table></figure>
 
-<h4 id="2-8-TCP窗口扫描"><a href="#2-8-TCP窗口扫描" class="headerlink" title="2.8 TCP窗口扫描"></a>2.8 TCP窗口扫描</h4><p>通过检查返回的RST 报文的TCP窗口域判断目标端口是否开启</p>
+<h4 id="TCP窗口扫描"><a href="#TCP窗口扫描" class="headerlink" title="TCP窗口扫描"></a>TCP窗口扫描</h4><p>通过检查返回的RST 报文的TCP窗口域判断目标端口是否开启</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmap -sW</span><br></pre></td></tr></table></figure>
 
 <h2 id="3-指纹探测"><a href="#3-指纹探测" class="headerlink" title="3.指纹探测"></a>3.指纹探测</h2><p><img src="https://cdn.dyblogs.cn//20200512144257.png" alt=""></p>
-<h4 id="3-1-版本探测"><a href="#3-1-版本探测" class="headerlink" title="3.1 版本探测"></a>3.1 版本探测</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmap -sV</span><br></pre></td></tr></table></figure>
+<h4 id="版本探测"><a href="#版本探测" class="headerlink" title="版本探测"></a>版本探测</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmap -sV</span><br></pre></td></tr></table></figure>
 
-<h4 id="3-2-全端口探测"><a href="#3-2-全端口探测" class="headerlink" title="3.2 全端口探测"></a>3.2 全端口探测</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmap --allports</span><br></pre></td></tr></table></figure>
+<h4 id="全端口探测"><a href="#全端口探测" class="headerlink" title="全端口探测"></a>全端口探测</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmap --allports</span><br></pre></td></tr></table></figure>
 
-<h4 id="3-3设置扫描强度"><a href="#3-3设置扫描强度" class="headerlink" title="3.3设置扫描强度"></a>3.3设置扫描强度</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmap --version-intensity</span><br></pre></td></tr></table></figure>
+<h4 id="设置扫描强度"><a href="#设置扫描强度" class="headerlink" title="设置扫描强度"></a>设置扫描强度</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmap --version-intensity</span><br></pre></td></tr></table></figure>
 
 <p>范围在1-9，默认强度是7</p>
-<h4 id="3-4轻量级扫描"><a href="#3-4轻量级扫描" class="headerlink" title="3.4轻量级扫描"></a>3.4轻量级扫描</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmap --version-light</span><br></pre></td></tr></table></figure>
+<h4 id="轻量级扫描"><a href="#轻量级扫描" class="headerlink" title="轻量级扫描"></a>轻量级扫描</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmap --version-light</span><br></pre></td></tr></table></figure>
 
 <p>扫描强度是2</p>
-<h4 id="3-5-重量级扫描"><a href="#3-5-重量级扫描" class="headerlink" title="3.5 重量级扫描"></a>3.5 重量级扫描</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmap --version-all</span><br></pre></td></tr></table></figure>
+<h4 id="重量级扫描"><a href="#重量级扫描" class="headerlink" title="重量级扫描"></a>重量级扫描</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmap --version-all</span><br></pre></td></tr></table></figure>
 
 <p>扫描强度是9</p>
-<h4 id="3-6获取详细版本信息"><a href="#3-6获取详细版本信息" class="headerlink" title="3.6获取详细版本信息"></a>3.6获取详细版本信息</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmap --version-trace</span><br></pre></td></tr></table></figure>
+<h4 id="获取详细版本信息"><a href="#获取详细版本信息" class="headerlink" title="获取详细版本信息"></a>获取详细版本信息</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmap --version-trace</span><br></pre></td></tr></table></figure>
 
-<h4 id="3-7-RPC扫描"><a href="#3-7-RPC扫描" class="headerlink" title="3.7 RPC扫描"></a>3.7 RPC扫描</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmap -sR</span><br></pre></td></tr></table></figure>
+<h4 id="RPC扫描"><a href="#RPC扫描" class="headerlink" title="RPC扫描"></a>RPC扫描</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmap -sR</span><br></pre></td></tr></table></figure>
 
-<h4 id="3-8-操作系统探测"><a href="#3-8-操作系统探测" class="headerlink" title="3.8 操作系统探测"></a>3.8 操作系统探测</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmap -O</span><br></pre></td></tr></table></figure>
+<h4 id="操作系统探测"><a href="#操作系统探测" class="headerlink" title="操作系统探测"></a>操作系统探测</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmap -O</span><br></pre></td></tr></table></figure>
 
-<h4 id="3-9-指定操作系统"><a href="#3-9-指定操作系统" class="headerlink" title="3.9 指定操作系统"></a>3.9 指定操作系统</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmap -O --osscan-limit</span><br></pre></td></tr></table></figure>
+<h4 id="指定操作系统"><a href="#指定操作系统" class="headerlink" title="指定操作系统"></a>指定操作系统</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmap -O --osscan-limit</span><br></pre></td></tr></table></figure>
 
 
       
@@ -447,6 +447,43 @@
     
     
 
+    <div>
+        
+            
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+  
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script type="text/javascript" src="http://jslibs.wuxubj.cn/sweetalert_mini/jquery-1.7.1.min.js"></script>
+  <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
+
+  <p><span>本文标题:</span>nmap扫描工具</a></p>
+  <p><span>文章作者:</span>Dyan</a></p>
+  <p><span>发布时间:</span>2020年05月11日 - 18:20:00</p>
+  <p><span>最后更新:</span>2020年05月11日 - 18:20:00</p>
+  <p><span>原始链接:</span><a href="/2020/05/11/nmap/" title="nmap扫描工具">http://yoursite.com/2020/05/11/nmap/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://yoursite.com/2020/05/11/nmap/"  aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+    clipboard.on('success', $(function(){
+      $(".fa-clipboard").click(function(){
+        swal({   
+          title: "",   
+          text: '复制成功',   
+          html: false,
+          timer: 500,   
+          showConfirmButton: false
+        });
+      });
+    }));  
+</script>
+
+        
+    </div>
     
 
     
@@ -617,7 +654,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-主机发现"><span class="nav-number">1.</span> <span class="nav-text">1.主机发现</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-ping扫描"><span class="nav-number">1.0.1.</span> <span class="nav-text">1.1 ping扫描</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-无ping"><span class="nav-number">1.0.2.</span> <span class="nav-text">1.2 无ping</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-TCP-SYS-Ping扫描"><span class="nav-number">1.0.3.</span> <span class="nav-text">1.3 TCP SYS Ping扫描</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-4-TCP-ACK-Ping"><span class="nav-number">1.0.4.</span> <span class="nav-text">1.4 TCP ACK Ping</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-5-TCP-ACK-SYN-Ping"><span class="nav-number">1.0.5.</span> <span class="nav-text">1.5 TCP ACK  SYN Ping</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-6-UDP-Ping扫描"><span class="nav-number">1.0.6.</span> <span class="nav-text">1.6 UDP Ping扫描</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-7-ICMP-Ping-扫描"><span class="nav-number">1.0.7.</span> <span class="nav-text">1.7 ICMP Ping 扫描</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#1-7-1-icmp-Echo-扫描"><span class="nav-number">1.0.7.0.1.</span> <span class="nav-text">1.7.1 icmp Echo 扫描</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#1-7-2-icmp-时间戳-Ping-扫描"><span class="nav-number">1.0.7.0.2.</span> <span class="nav-text">1.7.2  icmp 时间戳 Ping 扫描</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#1-7-3-icmp-地址掩码-Ping-扫描（内网）"><span class="nav-number">1.0.7.0.3.</span> <span class="nav-text">1.7.3 icmp 地址掩码 Ping 扫描（内网）</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-8-ARP-Ping-扫描"><span class="nav-number">1.0.8.</span> <span class="nav-text">1.8 ARP Ping 扫描</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-9-路由跟踪"><span class="nav-number">1.0.9.</span> <span class="nav-text">1.9 路由跟踪</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-10-SCTP-INIT-Ping-扫描"><span class="nav-number">1.0.10.</span> <span class="nav-text">1.10 SCTP INIT Ping 扫描</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-网络探索"><span class="nav-number">2.</span> <span class="nav-text">2.网络探索</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1时序扫描"><span class="nav-number">2.0.1.</span> <span class="nav-text">2.1时序扫描</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-指定端口扫描"><span class="nav-number">2.0.2.</span> <span class="nav-text">2.2 指定端口扫描</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-TCP-SYN-扫描"><span class="nav-number">2.0.3.</span> <span class="nav-text">2.3 TCP SYN 扫描</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-4-TCP-连续扫描"><span class="nav-number">2.0.4.</span> <span class="nav-text">2.4 TCP 连续扫描</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-5-UDP-扫描"><span class="nav-number">2.0.5.</span> <span class="nav-text">2.5  UDP 扫描</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-6-隐蔽扫描"><span class="nav-number">2.0.6.</span> <span class="nav-text">2.6 隐蔽扫描</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#2-6-1-sN-Null-扫描"><span class="nav-number">2.0.6.0.1.</span> <span class="nav-text">2.6.1  sN Null 扫描</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#2-6-2-FIN-扫描"><span class="nav-number">2.0.6.0.2.</span> <span class="nav-text">2.6.2 FIN 扫描</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#2-6-3-sX扫描"><span class="nav-number">2.0.6.0.3.</span> <span class="nav-text">2.6.3  sX扫描</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-7-TCP-ACK-扫描"><span class="nav-number">2.0.7.</span> <span class="nav-text">2.7 TCP ACK 扫描.</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-8-TCP窗口扫描"><span class="nav-number">2.0.8.</span> <span class="nav-text">2.8 TCP窗口扫描</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-指纹探测"><span class="nav-number">3.</span> <span class="nav-text">3.指纹探测</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1-版本探测"><span class="nav-number">3.0.1.</span> <span class="nav-text">3.1 版本探测</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-全端口探测"><span class="nav-number">3.0.2.</span> <span class="nav-text">3.2 全端口探测</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-3设置扫描强度"><span class="nav-number">3.0.3.</span> <span class="nav-text">3.3设置扫描强度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-4轻量级扫描"><span class="nav-number">3.0.4.</span> <span class="nav-text">3.4轻量级扫描</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-5-重量级扫描"><span class="nav-number">3.0.5.</span> <span class="nav-text">3.5 重量级扫描</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-6获取详细版本信息"><span class="nav-number">3.0.6.</span> <span class="nav-text">3.6获取详细版本信息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-7-RPC扫描"><span class="nav-number">3.0.7.</span> <span class="nav-text">3.7 RPC扫描</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-8-操作系统探测"><span class="nav-number">3.0.8.</span> <span class="nav-text">3.8 操作系统探测</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-9-指定操作系统"><span class="nav-number">3.0.9.</span> <span class="nav-text">3.9 指定操作系统</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#主机发现"><span class="nav-number">1.</span> <span class="nav-text">主机发现</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ping扫描"><span class="nav-number">1.0.1.</span> <span class="nav-text">ping扫描</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#无ping"><span class="nav-number">1.0.2.</span> <span class="nav-text">无ping</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#TCP-SYS-Ping扫描"><span class="nav-number">1.0.3.</span> <span class="nav-text">TCP SYS Ping扫描</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#TCP-ACK-Ping"><span class="nav-number">1.0.4.</span> <span class="nav-text">TCP ACK Ping</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#TCP-ACK-SYN-Ping"><span class="nav-number">1.0.5.</span> <span class="nav-text">TCP ACK  SYN Ping</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#UDP-Ping扫描"><span class="nav-number">1.0.6.</span> <span class="nav-text">UDP Ping扫描</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ICMP-Ping-扫描"><span class="nav-number">1.0.7.</span> <span class="nav-text">ICMP Ping 扫描</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#icmp-Echo-扫描"><span class="nav-number">1.0.7.0.1.</span> <span class="nav-text">icmp Echo 扫描</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#icmp-时间戳-Ping-扫描"><span class="nav-number">1.0.7.0.2.</span> <span class="nav-text">icmp 时间戳 Ping 扫描</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#icmp-地址掩码-Ping-扫描（内网）"><span class="nav-number">1.0.7.0.3.</span> <span class="nav-text">icmp 地址掩码 Ping 扫描（内网）</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ARP-Ping-扫描"><span class="nav-number">1.0.8.</span> <span class="nav-text">ARP Ping 扫描</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#路由跟踪"><span class="nav-number">1.0.9.</span> <span class="nav-text">路由跟踪</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SCTP-INIT-Ping-扫描"><span class="nav-number">1.0.10.</span> <span class="nav-text">SCTP INIT Ping 扫描</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#网络探索"><span class="nav-number">2.</span> <span class="nav-text">网络探索</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#时序扫描"><span class="nav-number">2.0.1.</span> <span class="nav-text">时序扫描</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#指定端口扫描"><span class="nav-number">2.0.2.</span> <span class="nav-text">指定端口扫描</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#TCP-SYN-扫描"><span class="nav-number">2.0.3.</span> <span class="nav-text">TCP SYN 扫描</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#TCP-连续扫描"><span class="nav-number">2.0.4.</span> <span class="nav-text">TCP 连续扫描</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#UDP-扫描"><span class="nav-number">2.0.5.</span> <span class="nav-text">UDP 扫描</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#隐蔽扫描"><span class="nav-number">2.0.6.</span> <span class="nav-text">隐蔽扫描</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#sN-Null-扫描"><span class="nav-number">2.0.6.0.1.</span> <span class="nav-text">sN Null 扫描</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#FIN-扫描"><span class="nav-number">2.0.6.0.2.</span> <span class="nav-text">FIN 扫描</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#sX扫描"><span class="nav-number">2.0.6.0.3.</span> <span class="nav-text">sX扫描</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#TCP-ACK-扫描"><span class="nav-number">2.0.7.</span> <span class="nav-text">TCP ACK 扫描.</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#TCP窗口扫描"><span class="nav-number">2.0.8.</span> <span class="nav-text">TCP窗口扫描</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-指纹探测"><span class="nav-number">3.</span> <span class="nav-text">3.指纹探测</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#版本探测"><span class="nav-number">3.0.1.</span> <span class="nav-text">版本探测</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#全端口探测"><span class="nav-number">3.0.2.</span> <span class="nav-text">全端口探测</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#设置扫描强度"><span class="nav-number">3.0.3.</span> <span class="nav-text">设置扫描强度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#轻量级扫描"><span class="nav-number">3.0.4.</span> <span class="nav-text">轻量级扫描</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#重量级扫描"><span class="nav-number">3.0.5.</span> <span class="nav-text">重量级扫描</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#获取详细版本信息"><span class="nav-number">3.0.6.</span> <span class="nav-text">获取详细版本信息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#RPC扫描"><span class="nav-number">3.0.7.</span> <span class="nav-text">RPC扫描</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#操作系统探测"><span class="nav-number">3.0.8.</span> <span class="nav-text">操作系统探测</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#指定操作系统"><span class="nav-number">3.0.9.</span> <span class="nav-text">指定操作系统</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
